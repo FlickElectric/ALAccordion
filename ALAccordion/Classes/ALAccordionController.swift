@@ -71,7 +71,7 @@ public class ALAccordionController: UIViewController
         self.layoutView()
 
         self.sectionContainerView.clipsToBounds = true
-        self.sectionContainerView.backgroundColor = UIColor.clearColor()
+        self.sectionContainerView.backgroundColor = UIColor.whiteColor()
     }
 
     // MARK: - Layout views
@@ -118,7 +118,7 @@ public class ALAccordionController: UIViewController
         let containerHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[container]|", options: [], metrics: nil, views: views)
         let footerHorizontal    = NSLayoutConstraint.constraintsWithVisualFormat("H:|[footer]|", options: [], metrics: nil, views: views)
 
-        let centerYContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .CenterY, relatedBy: .Equal, toItem: self.view, attribute: .CenterY, multiplier: 1.0, constant: 0)
+        let centerYContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .Top, relatedBy: .Equal, toItem: self.headerContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
         centerYContainer.priority = 250
 
         let topContainer = NSLayoutConstraint(item: self.sectionContainerView, attribute: .Top, relatedBy: .GreaterThanOrEqual, toItem: self.headerContainerView, attribute: .Bottom, multiplier: 1.0, constant: 0)
